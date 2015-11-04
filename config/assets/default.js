@@ -8,45 +8,42 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap-theme.css'
       ],
       js: [
-        'public/lib/angular/angular.js',
-        'public/lib/angular-resource/angular-resource.js',
-        'public/lib/angular-animate/angular-animate.js',
-        'public/lib/angular-messages/angular-messages.js',
-        'public/lib/angular-ui-router/release/angular-ui-router.js',
-        'public/lib/angular-ui-utils/ui-utils.js',
-        'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-        'public/lib/angular-file-upload/angular-file-upload.js',
-        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
+        'node_modules/systemjs/dist/system.src.js',
+        'node_modules/angular2/bundles/angular2.dev.js',
+        'node_modules/angular2/bundles/router.dev.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
     css: [
-      'modules/*/client/css/*.css'
+      'src/*/client/css/*.css'
     ],
     less: [
-      'modules/*/client/less/*.less'
+      'src/*/client/less/*.less'
     ],
     sass: [
-      'modules/*/client/scss/*.scss'
+      'src/*/client/scss/*.scss'
     ],
     js: [
-      'modules/core/client/app/config.js',
-      'modules/core/client/app/init.js',
-      'modules/*/client/*.js',
-      'modules/*/client/**/*.js'
+      'public/dist/application.js',
     ],
-    views: ['modules/*/client/views/**/*.html'],
+    ts:[
+     // 'modules/core/client/app/config.ts',
+      'src/*/**/**/**.ts',
+     // 'modules/*/client/*.ts',
+     // 'modules/*/client/**/*.ts'
+    ],
+    views: ['src/*/client/views/**/*.html'],
     templates: ['build/templates.js']
   },
   server: {
     gruntConfig: 'gruntfile.js',
     gulpConfig: 'gulpfile.js',
-    allJS: ['server.js', 'config/**/*.js', 'modules/*/server/**/*.js'],
-    models: 'modules/*/server/models/**/*.js',
-    routes: ['modules/!(core)/server/routes/**/*.js', 'modules/core/server/routes/**/*.js'],
-    sockets: 'modules/*/server/sockets/**/*.js',
-    config: 'modules/*/server/config/*.js',
-    policies: 'modules/*/server/policies/*.js',
-    views: 'modules/*/server/views/*.html'
+    allJS: ['server.js', 'config/**/*.js', 'src/*/server/**/*.js'],
+    models: 'src/*/server/models/**/*.js',
+    routes: ['src/!(core)/server/routes/**/*.js', 'src/core/server/routes/**/*.js'],
+    sockets: 'src/*/server/sockets/**/*.js',
+    config: 'src/*/server/config/*.js',
+    policies: 'src/*/server/policies/*.js',
+    views: 'src/*/server/views/*.html'
   }
 };

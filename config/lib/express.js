@@ -157,7 +157,9 @@ module.exports.initHelmetHeaders = function (app) {
 module.exports.initModulesClientRoutes = function (app) {
   // Setting the app router and static folder
   app.use('/', express.static(path.resolve('./public')));
-
+  app.use('/node_modules', express.static(path.resolve('./node_modules')));
+  app.use('/src', express.static(path.resolve('./public/src')));
+  
   // Globbing static routing
   config.folders.client.forEach(function (staticPath) {
     app.use(staticPath, express.static(path.resolve('./' + staticPath)));

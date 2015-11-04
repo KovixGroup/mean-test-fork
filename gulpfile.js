@@ -53,7 +53,7 @@ gulp.task('watch', function () {
   // Add watch rules
   gulp.watch(defaultAssets.server.views).on('change', plugins.livereload.changed);
   gulp.watch(defaultAssets.server.allJS, ['jshint']).on('change', plugins.livereload.changed);
-  gulp.watch(defaultAssets.client.js, ['jshint']).on('change', plugins.livereload.changed);
+  gulp.watch(defaultAssets.client.ts, ['jshint', 'tsc']).on('change', plugins.livereload.changed);
   gulp.watch(defaultAssets.client.css, ['csslint']).on('change', plugins.livereload.changed);
   gulp.watch(defaultAssets.client.sass, ['sass', 'csslint']).on('change', plugins.livereload.changed);
   gulp.watch(defaultAssets.client.less, ['less', 'csslint']).on('change', plugins.livereload.changed);
@@ -79,6 +79,15 @@ gulp.task('csslint', function (done) {
     }));
 });
 
+
+gulp.task('tsc', function () {
+  var tsProject = plugins.typescript.createProject('tsconfig.json');
+  
+    return gulp.src(defaultAssets.client.ts)
+        .pipe(plugins.typescript(tsProject))
+        .pipe(gulp.dest('./src'));
+});
+
 // JS linting task
 gulp.task('jshint', function () {
   var assets = _.union(
@@ -101,7 +110,7 @@ gulp.task('eslint', function () {
   var assets = _.union(
     defaultAssets.server.gulpConfig,
     defaultAssets.server.allJS,
-    defaultAssets.client.js,
+    //defaultAssets.client.js,
     testAssets.tests.server,
     testAssets.tests.client,
     testAssets.tests.e2e
@@ -144,7 +153,7 @@ gulp.task('sass', function () {
     .pipe(plugins.rename(function (file) {
       file.dirname = file.dirname.replace(path.sep + 'scss', path.sep + 'css');
     }))
-    .pipe(gulp.dest('./modules/'));
+    .pipe(gulp.dest('./src/'));
 });
 
 // Less task
@@ -155,7 +164,7 @@ gulp.task('less', function () {
     .pipe(plugins.rename(function (file) {
       file.dirname = file.dirname.replace(path.sep + 'less', path.sep + 'css');
     }))
-    .pipe(gulp.dest('./modules/'));
+    .pipe(gulp.dest('./src/'));
 });
 
 // Angular template cache task
@@ -164,7 +173,7 @@ gulp.task('templatecache', function () {
 
   return gulp.src(defaultAssets.client.views)
     .pipe(plugins.templateCache('templates.js', {
-      root: 'modules/',
+      root: 'src/',
       module: 'core',
       templateHeader: '(function () {' + endOfLine + '	\'use strict\';' + endOfLine + endOfLine + '	angular' + endOfLine + '		.module(\'<%= module %>\'<%= standalone %>)' + endOfLine + '		.run(templates);' + endOfLine + endOfLine + '	templates.$inject = [\'$templateCache\'];' + endOfLine + endOfLine + '	function templates($templateCache) {' + endOfLine,
       templateBody: '		$templateCache.put(\'<%= url %>\', \'<%= contents %>\');',
@@ -286,7 +295,7 @@ gulp.task('test:e2e', function (done) {
 
 // Run the project in development mode
 gulp.task('default', function (done) {
-  runSequence('env:dev', 'lint', ['nodemon', 'watch'], done);
+  runSequence('env:dev', 'lint', 'tsc', ['nodemon', 'watch'], done);
 });
 
 // Run the project in debug mode

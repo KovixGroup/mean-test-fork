@@ -2,8 +2,8 @@
 
 module.exports = {
   tests: {
-    client: ['modules/*/tests/client/**/*.js'],
-    server: ['modules/*/tests/server/**/*.js'],
-    e2e: ['modules/*/tests/e2e/**/*.js']
+    client: ['src/*/tests/client/**/*.js'],
+    server: ['src/*/tests/server/**/*.js'],
+    e2e: ['src/*/tests/e2e/**/*.js']
   }
 };
