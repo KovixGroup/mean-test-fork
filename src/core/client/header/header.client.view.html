@@ -1,0 +1,18 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" (click)="toggleCollapsibleMenu()">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a router-link="[ '/Home' ]" class="navbar-brand">MEAN.JS</a>
+  </div>
+  
+  <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+    <main-menu></main-menu>
+    <usermenu></usermenu>
+  </nav>
+</div>
+</header>

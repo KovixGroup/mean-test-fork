@@ -1,7 +1,9 @@
-import {Component, bootstrap} from 'angular2/angular2';
+import {Component, View, bootstrap} from 'angular2/angular2';
 
 @Component({
-    selector: 'home',
-    template: '<h1>Testing Router</h1>'
+    selector: 'home'
+})
+@View({
+   templateUrl: '/src/core/client/home/home.client.view.html'
 })
 export class HomeComp { }

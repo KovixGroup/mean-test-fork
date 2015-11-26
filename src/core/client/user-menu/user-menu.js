@@ -10,18 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var HomeComp = (function () {
-    function HomeComp() {
+var router_1 = require('angular2/router');
+var UserMenuComp = (function () {
+    function UserMenuComp() {
+        this.authentication = {};
+        this.authentication = {};
+        this.authentication.user = false;
     }
-    HomeComp = __decorate([
+    UserMenuComp = __decorate([
         angular2_1.Component({
-            selector: 'home'
+            selector: 'usermenu'
         }),
         angular2_1.View({
-            templateUrl: '/src/core/client/home/home.client.view.html'
+            directives: [router_1.RouterLink],
+            templateUrl: '/src/core/client/user-menu/user-menu.client.view.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeComp);
-    return HomeComp;
+    ], UserMenuComp);
+    return UserMenuComp;
 })();
-exports.HomeComp = HomeComp;
+exports.UserMenuComp = UserMenuComp;

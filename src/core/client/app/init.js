@@ -12,6 +12,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
 var home_1 = require('../home/home');
+var header_1 = require('../header/header');
+var menus_client_service_1 = require('../services/menus.client.service');
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -20,14 +22,14 @@ var AppComponent = (function () {
             selector: 'my-app'
         }),
         angular2_1.View({
-            template: '<h1>My angular app</h1><router-outlet></router-outlet>',
-            directives: [router_1.RouterOutlet, router_1.RouterLink, home_1.HomeComp]
+            templateUrl: '/src/core/client/app/layout.client.view.html',
+            directives: [router_1.RouterOutlet, router_1.RouterLink, header_1.HeaderComp]
         }),
         router_1.RouteConfig([
-            { path: '/', component: home_1.HomeComp },
+            { path: '/', component: home_1.HomeComp, as: 'Home' },
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 })();
-angular2_1.bootstrap(AppComponent, [router_1.ROUTER_BINDINGS]);
+angular2_1.bootstrap(AppComponent, [router_1.ROUTER_BINDINGS, menus_client_service_1.MenusService]);
