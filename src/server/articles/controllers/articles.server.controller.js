@@ -6,7 +6,7 @@
 var path = require('path'),
   mongoose = require('mongoose'),
   Article = mongoose.model('Article'),
-  errorHandler = require(path.resolve('./src/core/server/controllers/errors.server.controller'));
+  errorHandler = require(path.resolve('./src/server/core/controllers/errors.server.controller'));
 
 /**
  * Create a article

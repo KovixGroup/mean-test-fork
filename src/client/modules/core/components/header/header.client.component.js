@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var main_menu_1 = require('../main-menu/main-menu');
-var user_menu_1 = require('../user-menu/user-menu');
+var menu_client_component_1 = require('../../../../common/components/menu/menu.client.component');
+var user_menu_1 = require('../../../users/components/user-menu/user-menu');
 var HeaderComp = (function () {
     function HeaderComp() {
         //menu.collapse()
@@ -28,8 +28,8 @@ var HeaderComp = (function () {
             selector: 'appheader'
         }),
         angular2_1.View({
-            directives: [router_1.RouterLink, user_menu_1.UserMenuComp, main_menu_1.MainMenuComp],
-            templateUrl: '/src/core/client/header/header.client.view.html'
+            directives: [router_1.RouterLink, user_menu_1.UserMenuComp, menu_client_component_1.Menu],
+            templateUrl: '/src/client/modules/core/components/header/header.client.view.html'
         }), 
         __metadata('design:paramtypes', [])
     ], HeaderComp);

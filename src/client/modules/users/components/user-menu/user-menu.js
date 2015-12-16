@@ -23,7 +23,7 @@ var UserMenuComp = (function () {
         }),
         angular2_1.View({
             directives: [router_1.RouterLink],
-            templateUrl: '/src/core/client/user-menu/user-menu.client.view.html'
+            templateUrl: '/src/client/modules/users/components/user-menu/user-menu.client.view.html'
         }), 
         __metadata('design:paramtypes', [])
     ], UserMenuComp);

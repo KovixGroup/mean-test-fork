@@ -4,6 +4,6 @@ import {Component, View, bootstrap} from 'angular2/angular2';
     selector: 'home'
 })
 @View({
-   templateUrl: '/src/core/client/home/home.client.view.html'
+   templateUrl: '/src/client/modules/core/components/home/home.client.view.html'
 })
 export class HomeComp { }

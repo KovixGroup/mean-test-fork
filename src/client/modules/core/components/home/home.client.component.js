@@ -18,7 +18,7 @@ var HomeComp = (function () {
             selector: 'home'
         }),
         angular2_1.View({
-            templateUrl: '/src/core/client/home/home.client.view.html'
+            templateUrl: '/src/client/modules/core/components/home/home.client.view.html'
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComp);

@@ -4,7 +4,7 @@
  * Render the main application page
  */
 exports.renderIndex = function (req, res) {
-  res.render('src/core/server/views/index', {
+  res.render('src/server/core/views/index', {
     user: req.user || null
   });
 };
@@ -13,7 +13,7 @@ exports.renderIndex = function (req, res) {
  * Render the server error page
  */
 exports.renderServerError = function (req, res) {
-  res.status(500).render('src/core/server/views/500', {
+  res.status(500).render('src/server/core/views/500', {
     error: 'Oops! Something went wrong...'
   });
 };
@@ -26,7 +26,7 @@ exports.renderNotFound = function (req, res) {
 
   res.status(404).format({
     'text/html': function () {
-      res.render('src/core/server/views/404', {
+      res.render('src/server/core/views/404', {
         url: req.originalUrl
       });
     },

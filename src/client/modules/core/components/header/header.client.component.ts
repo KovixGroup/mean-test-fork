@@ -1,14 +1,14 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {RouteConfig, Router, RouterOutlet, RouterLink, ROUTER_BINDINGS } from 'angular2/router';
-import { MainMenuComp } from '../main-menu/main-menu';
-import { UserMenuComp } from '../user-menu/user-menu';
+import { Menu } from '../../../../common/components/menu/menu.client.component';
+import { UserMenuComp } from '../../../users/components/user-menu/user-menu';
 
 @Component({
     selector: 'appheader'
 })
 @View({
-   directives: [RouterLink, UserMenuComp, MainMenuComp ],
-   templateUrl: '/src/core/client/header/header.client.view.html'
+   directives: [RouterLink, UserMenuComp, Menu ],
+   templateUrl: '/src/client/modules/core/components/header/header.client.view.html'
 })
 export class HeaderComp { 
   

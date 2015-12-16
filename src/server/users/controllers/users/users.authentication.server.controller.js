@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var path = require('path'),
-  errorHandler = require(path.resolve('./src/core/server/controllers/errors.server.controller')),
+  errorHandler = require(path.resolve('./src/server/core/controllers/errors.server.controller')),
   mongoose = require('mongoose'),
   passport = require('passport'),
   User = mongoose.model('User');

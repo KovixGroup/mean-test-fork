@@ -11,22 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var menus_client_service_1 = require('../services/menus.client.service');
-var MainMenuComp = (function () {
-    function MainMenuComp(MenusService) {
-        console.log("construct Main Menu");
-        this.menu = MenusService.getMenu('topbar');
+var menus_client_service_1 = require('../../services/menu-service/menus.client.service');
+var Menu = (function () {
+    //menu: MenuItem;
+    function Menu(MenusService) {
+        console.log("hola");
+        this.menuid = "chau";
+        // this.menu = MenusService.getMenu(this.menuid);
     }
-    MainMenuComp = __decorate([
+    Menu = __decorate([
         angular2_1.Component({
-            selector: 'main-menu'
+            selector: 'mean-menu'
         }),
         angular2_1.View({
             directives: [router_1.RouterLink],
-            templateUrl: '/src/core/client/main-menu/main-menu.client.view.html'
+            //template: 'HOLAAAAAAAAA'
+            templateUrl: '/src/client/common/components/menu/menu.client.view.html'
         }), 
         __metadata('design:paramtypes', [menus_client_service_1.MenusService])
-    ], MainMenuComp);
-    return MainMenuComp;
+    ], Menu);
+    return Menu;
 })();
-exports.MainMenuComp = MainMenuComp;
+exports.Menu = Menu;

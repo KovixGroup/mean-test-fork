@@ -85,7 +85,7 @@ gulp.task('tsc', function () {
   
     return gulp.src(defaultAssets.client.ts)
         .pipe(plugins.typescript(tsProject))
-        .pipe(gulp.dest('./src'));
+        .pipe(gulp.dest('./src/client'));
 });
 
 // JS linting task

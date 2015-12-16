@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var home_1 = require('../home/home');
-var header_1 = require('../header/header');
-var menus_client_service_1 = require('../services/menus.client.service');
+var home_client_component_1 = require('../modules/core/components/home/home.client.component');
+var header_client_component_1 = require('../modules/core/components/header/header.client.component');
+var menus_client_service_1 = require('../common/services/menu-service/menus.client.service');
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -22,11 +22,11 @@ var AppComponent = (function () {
             selector: 'my-app'
         }),
         angular2_1.View({
-            templateUrl: '/src/core/client/app/layout.client.view.html',
-            directives: [router_1.RouterOutlet, router_1.RouterLink, header_1.HeaderComp]
+            templateUrl: '/src/client/app/layout.client.view.html',
+            directives: [router_1.RouterOutlet, router_1.RouterLink, header_client_component_1.HeaderComp]
         }),
         router_1.RouteConfig([
-            { path: '/', component: home_1.HomeComp, as: 'Home' },
+            { path: '/', component: home_client_component_1.HomeComp, as: 'Home' },
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -28,22 +28,22 @@ module.exports = {
     ],
     ts:[
      // 'modules/core/client/app/config.ts',
-      'src/*/**/**/**.ts',
+      'src/client/**/**.ts',
      // 'modules/*/client/*.ts',
      // 'modules/*/client/**/*.ts'
     ],
-    views: ['src/*/client/views/**/*.html'],
+    views: ['src/client/**/**/**/*.html'],
     templates: ['build/templates.js']
   },
   server: {
     gruntConfig: 'gruntfile.js',
     gulpConfig: 'gulpfile.js',
-    allJS: ['server.js', 'config/**/*.js', 'src/*/server/**/*.js'],
-    models: 'src/*/server/models/**/*.js',
-    routes: ['src/!(core)/server/routes/**/*.js', 'src/core/server/routes/**/*.js'],
-    sockets: 'src/*/server/sockets/**/*.js',
-    config: 'src/*/server/config/*.js',
-    policies: 'src/*/server/policies/*.js',
-    views: 'src/*/server/views/*.html'
+    allJS: ['server.js', 'config/**/*.js', 'src/server/*/**/*.js'],
+    models: 'src/server/*/models/**/*.js',
+    routes: ['src/server/!(core)/routes/**/*.js', 'src/server/core/routes/**/*.js'],
+    sockets: 'src/server/*/sockets/**/*.js',
+    config: 'src/server/*/config/*.js',
+    policies: 'src/server/*/policies/*.js',
+    views: 'src/server/*/views/*.html'
   }
 };

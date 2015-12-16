@@ -158,7 +158,7 @@ module.exports.initModulesClientRoutes = function (app) {
   // Setting the app router and static folder
   app.use('/', express.static(path.resolve('./public')));
   app.use('/node_modules', express.static(path.resolve('./node_modules')));
-  app.use('/src', express.static(path.resolve('./public/src')));
+  app.use('/src/client', express.static(path.resolve('./src/client')));
   
   // Globbing static routing
   config.folders.client.forEach(function (staticPath) {
